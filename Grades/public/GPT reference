@@ -1,0 +1,65 @@
+
+window.addEventListener("load", addListener);
+
+function addListener() {
+    document.getElementById("btnlogin").addEventListener("click", PreformCalc);
+}
+
+function PreformCalc(event) {
+    // prevent the form from reloading the page
+    event.preventDefault();
+
+    // Get class names
+    let c1 = document.getElementById("c1").value;
+    let c2 = document.getElementById("c2").value;
+    let c3 = document.getElementById("c3").value;
+    let c4 = document.getElementById("c4").value;
+    let c5 = document.getElementById("c5").value;
+
+    // Get grades
+    let g1 = parseFloat(document.getElementById("g1").value);
+    let g2 = parseFloat(document.getElementById("g2").value);
+    let g3 = parseFloat(document.getElementById("g3").value);
+    let g4 = parseFloat(document.getElementById("g4").value);
+    let g5 = parseFloat(document.getElementById("g5").value);
+
+    // Calculate average
+    let avg = (g1 + g2 + g3 + g4 + g5) / 5;
+
+    // Display results
+    document.write("<h2>Grade Checker Result</h2>");
+    document.write("<p>Your average grade is: <b>" + avg.toFixed(2) + "</b></p>");
+
+    document.write("<h3>Classes and Grades:</h3>");
+    document.write("<ul>");
+    document.write("<li>" + c1 + ": " + g1 + "</li>");
+    document.write("<li>" + c2 + ": " + g2 + "</li>");
+    document.write("<li>" + c3 + ": " + g3 + "</li>");
+    document.write("<li>" + c4 + ": " + g4 + "</li>");
+    document.write("<li>" + c5 + ": " + g5 + "</li>");
+    document.write("</ul>");
+}
+
+
+---
+
+✨ Key Improvements:
+
+1. ✅ Added event.preventDefault(); so your form doesn’t refresh the page.
+
+
+2. ✅ Reads both class names (c1–c5) and grades (g1–g5).
+
+
+3. ✅ Displays them as a neat list under the average.
+
+
+4. ✅ Used .toFixed(2) so the average shows only 2 decimal places.
+
+
+
+
+---
+
+👉 Do you also want me to show you how to make it display the results without replacing the whole page (so the form stays visible and results appear below it)?
+
